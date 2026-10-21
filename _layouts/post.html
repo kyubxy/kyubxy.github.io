@@ -1,0 +1,10 @@
+---
+layout: default
+---
+<h1>{{ page.title | escape }}{{ page.shortUrl }}</h1>
+{% include post-timestamp.html date=page.date %}
+<div class="separator"></div>
+
+{{ content }}
+
+{% if site.disqus-id %}{% include comments.html %}{% endif %}

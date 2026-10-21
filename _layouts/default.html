@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>
+        {% if page.title %}
+            {{ page.title }}
+        {% else %} 
+            {{ site.name }} &mdash; {{ site.description }}
+        {% endif %}
+    </title>
+
+    {% if site.highlighter %}
+        <link rel='stylesheet' href='{{ site.url }}/assets/css/syntax.css' type='text/css'>
+    {% endif %}
+    
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        html {
+            background: #000;
+        }
+
+        body, code, pre, kbd, samp {
+            font-family: "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", sans-serif;
+        }
+
+        body {
+            font-size: 14px;
+            box-sizing: border-box;
+            width: calc(100% - 32px);
+            max-width: 70rem;
+            margin: 40px auto 0;
+            color: #ccc;
+            text-align: left;
+        }
+
+        .site-topbar {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #444;
+        }
+
+        .site-topbar h1 {
+            margin: 0;
+        }
+
+        .site-nav {
+            margin-left: auto;
+            text-align: right;
+        }
+
+        .site-nav a + a {
+            margin-left: 16px;
+        }
+
+        .content-panel {
+            box-sizing: border-box;
+            padding: 24px;
+            background: #242424;
+        }
+
+        .content-panel p,
+        .content-panel li,
+        .content-panel blockquote,
+        .content-panel pre,
+        .content-panel table {
+            font-size: 13px;
+        }
+
+        .content-panel img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .page-columns {
+            display: grid;
+            grid-template-columns: 180px minmax(0, 1fr);
+            gap: 8px;
+        }
+
+        .content-panel.post-list {
+            padding: 0;
+            background: transparent;
+        }
+
+        .post-box {
+            padding: 24px;
+            background: #242424;
+        }
+
+        .post-box + .post-box {
+            margin-top: 12px;
+        }
+
+        .content-panel .post-timestamp {
+            color: #aaa;
+            font-size: 12px;
+            margin: 0 0 16px;
+        }
+
+        .post-box h2 {
+            margin-bottom: 8px;
+        }
+
+        .post-box .post-timestamp {
+            margin-bottom: 14px;
+        }
+
+        .post-preview > :first-child {
+            margin-top: 0;
+        }
+
+        .read-more {
+            text-align: right;
+        }
+
+        .read-more a:link,
+        .read-more a:visited {
+            color: #80bfff;
+            text-decoration: none;
+        }
+
+        .read-more a:hover {
+            color: #b3d9ff;
+            text-decoration: underline;
+        }
+
+        .post-preview {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 30;
+            overflow: hidden;
+        }
+
+        .post-box h2 {
+            margin-top: 0;
+            padding-bottom: 6px;
+            border-bottom: 1px solid #444;
+        }
+
+        .post-box p {
+            margin-bottom: 0;
+        }
+
+        .post-calendar {
+            box-sizing: border-box;
+            min-width: 0;
+            padding: 10px 10px 10px 0;
+            font-size: 12px;
+        }
+
+        .site-description {
+            margin: 0 0 20px;
+            line-height: 1.5;
+        }
+
+        .post-calendar h2 { margin-top: 0; }
+        .calendar-controls { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+        .calendar-controls h3 { margin: 0; font-size: 12px; text-align: center; }
+        .calendar-controls button { color: #80bfff; background: #242424; border: 1px solid #555; padding: 4px 6px; cursor: pointer; }
+        .calendar-controls button:focus-visible, .post-calendar a:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+        .calendar-table { width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; }
+        .calendar-table caption { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); }
+        .calendar-table th, .calendar-table td { padding: 3px 1px; }
+        .calendar-table .current-day { outline: 1px solid #80bfff; }
+        .post-calendar [data-day-posts] section { scroll-margin-top: 1rem; }
+        .post-calendar [data-day-posts] h4 { margin-bottom: 0; }
+
+        @media (max-width: 760px) {
+            .page-columns { grid-template-columns: minmax(0, 1fr); }
+        }
+
+        .site-footer {
+            margin: 12px 0 24px;
+        }
+
+        a:link, a:visited, a:hover, a:active {
+            color: #fff;
+        }
+
+        a {
+            text-decoration-color: rgba(255, 255, 255, 0.35);
+            text-decoration-thickness: 1px;
+            text-underline-offset: 3px;
+        }
+
+        a:hover {
+            color: #80bfff;
+            text-decoration-color: currentColor;
+        }
+
+        a:focus-visible {
+            outline: 2px solid #fff;
+            outline-offset: 4px;
+            border-radius: 2px;
+        }
+
+        .site-topbar a,
+        .content-panel h2 a {
+            text-decoration: none;
+        }
+
+        .site-topbar a:hover,
+        .content-panel h2 a:hover {
+            text-decoration: underline;
+        }
+
+        .calendar-table a {
+            display: block;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .calendar-table a:hover {
+            background: rgba(255, 255, 255, 0.22);
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="site-topbar">
+        {% include header.html %}
+
+        <nav class="site-nav">
+            <a href="{{ '/' | relative_url }}">Home</a>
+            <a href="{{ '/about/' | relative_url }}">About</a>
+        </nav>
+    </div>
+
+    <div class="page-columns">
+        {% include post-calendar.html %}
+        <main class="content-panel{% if page.post_list %} post-list{% endif %}">
+            {{ content }}
+        </main>
+    </div>
+    <footer class="site-footer">
+        <small>Based off of <a href="https://github.com/cyevgeniy/jekyll-true-minimal/">true minimal theme</a>.</small>
+    </footer>
+</body>
+<script src="{{ '/assets/js/post-calendar.js' | relative_url }}" defer></script>
+</html>

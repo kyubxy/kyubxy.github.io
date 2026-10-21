@@ -1,0 +1,15 @@
+---
+layout: default
+title: About
+permalink: /about/
+---
+
+Hello.
+
+I write code and play music games, I was very bad at conic sections in high school.
+
+I have a website now. I'll figure out what to do with it at some point. For now you can have janky 2007 looking blog site.
+
+Picture unrelated
+
+<img src="https://private-user-images.githubusercontent.com/28855597/486072430-d292119a-3460-4001-8865-7acebe00b536.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3OTI1ODQ4OTUsIm5iZiI6MTc5MjU4NDU5NSwicGF0aCI6Ii8yODg1NTU5Ny80ODYwNzI0MzAtZDI5MjExOWEtMzQ2MC00MDAxLTg4NjUtN2FjZWJlMDBiNTM2LmpwZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjEwMjElMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYxMDIxVDEyMDk1NVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWQ2YTVkMDRkM2RjMjUzZDJkYmU1ZjhiY2YyYzMyNDc1YzdlNjAxY2JlZjgzNmFiY2Q0NTRlYmE0YmM0YzBhNTgmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnJlc3BvbnNlLWNvbnRlbnQtdHlwZT1pbWFnZSUyRmpwZWcifQ.DLqdtp1_NXDSpq41QKmmym6Ytmy4Ad6WzIZb___wOUw">

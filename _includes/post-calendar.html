@@ -1,0 +1,17 @@
+<aside class="post-calendar" aria-label="Post calendar" data-post-calendar>
+  {% if site.description %}
+  <p class="site-description">{{ site.description | escape }}</p>
+  {% endif %}
+  <div class="calendar-controls" hidden>
+    <button type="button" data-month-change="-1" aria-label="Previous month">&larr;</button>
+    <h3 data-month-title aria-live="polite"></h3>
+    <button type="button" data-month-change="1" aria-label="Next month">&rarr;</button>
+  </div>
+  <div data-calendar-grid></div>
+  <div data-day-posts></div>
+  <script type="application/json" data-calendar-posts>[{% for post in site.posts %}{% unless forloop.first %},{% endunless %}{"title":{{ post.title | jsonify | replace: '<', '\u003c' }},"url":{{ post.url | relative_url | jsonify | replace: '<', '\u003c' }},"date":{{ post.date | date: "%Y-%m-%d" | jsonify | replace: '<', '\u003c' }}}{% endfor %}]</script>
+  <noscript>
+    <h3>All posts</h3>
+    <ul>{% for post in site.posts %}<li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> — {{ post.date | date: "%b %-d, %Y" }}</li>{% endfor %}</ul>
+  </noscript>
+</aside>
